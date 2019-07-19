@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
+import com.autotest.utils.PathUtil;
 import com.yss.conversion.ResultSetConvert;
 
 public class JdbcDao {
@@ -41,7 +42,7 @@ public class JdbcDao {
 		Properties prop = new Properties();
 		InputStream in;
 		try {
-			in = new BufferedInputStream(new FileInputStream("src/main/resources/sql.properties"));
+			in = new BufferedInputStream(new FileInputStream(PathUtil.getPath("/sql.properties")));
 			try {
 				prop.load(in);
 			} catch (IOException e) {
